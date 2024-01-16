@@ -1,9 +1,23 @@
 package Article;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        Article article = new Article("Breaking", "Apart from counting words and characters our online editor can help you to improve word choice and writing style, and, optionally, help you to detect grammar mistakes and plagiarism. To check word count, simply place your cursor into the text box above and start typing. You'll see the number of characters and words increase or decrease as you type, delete, and edit them. You can also copy and paste text from another program over into the online editor above. The Auto-Save feature will make sure you won't lose any changes while editing, even if you leave the site and come back later", "Jasser");
+        // Test af klassen
+        String exampleBody = "1. Lav en klasse Article der har tre attributter: heading, body og author. Lav test-kode der sætter alle tre attributter, og sørg for at body er en lang tekst - f.eks. indholdet af denne øvelsesbeskrivelse!";
+        Article article = new Article("Java Classes", exampleBody, "John Doe");
 
-        System.out.println(article.getLongestWord());
+        System.out.println("Heading: " + article.getHeading());
+        System.out.println("Author: " + article.getAuthor());
+        System.out.println("Body: " + article.getBody());
+
+        System.out.println("\nLongest Word: " + article.getLongestWord());
+
+        List<String> uniqueWords = article.getWords();
+        System.out.println("\nUnique Words:");
+        for (String word : uniqueWords) {
+            System.out.println(word);
+        }
     }
 }
